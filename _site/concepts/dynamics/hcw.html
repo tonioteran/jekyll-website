@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Hill-Clohessy-Wiltshire Equations | tonio’s world</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Hill-Clohessy-Wiltshire Equations" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The linearized relative dynamics between a chaser satellite and a target object in orbit can be described by the following set of equations:" />
+<meta property="og:description" content="The linearized relative dynamics between a chaser satellite and a target object in orbit can be described by the following set of equations:" />
+<link rel="canonical" href="http://localhost:4000/concepts/dynamics/hcw" />
+<meta property="og:url" content="http://localhost:4000/concepts/dynamics/hcw" />
+<meta property="og:site_name" content="tonio’s world" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-10T08:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"The linearized relative dynamics between a chaser satellite and a target object in orbit can be described by the following set of equations:","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/concepts/dynamics/hcw"},"@type":"BlogPosting","url":"http://localhost:4000/concepts/dynamics/hcw","headline":"Hill-Clohessy-Wiltshire Equations","dateModified":"2018-07-10T08:00:00-07:00","datePublished":"2018-07-10T08:00:00-07:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="tonio's world" /><script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+	tex2jax: {
+	    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	    processEscapes: true
+		}
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">tonio&#39;s world</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/tipstricks/tipstricks.html">Tips and Tricks</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Hill-Clohessy-Wiltshire Equations</h1>
+  </header>
+
+  <div class="post-content">
+    <p>The linearized relative dynamics between a chaser satellite and a target object in orbit can be described by the following set of equations:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\ddot{x}(t) &= 2n \cdot \dot{y}(t) + 3n^2 \cdot x(t) \; [\;+\; \frac{F_x}{m} \; ] \\[0.3em]
+\ddot{y}(t) &= -2n \cdot \dot{x}(t)  \; [\;+\; \frac{F_y}{m} \; ]  \\[0.3em]
+\ddot{z}(t) &= -n^2 \cdot z(t)  \; [\;+\; \frac{F_z}{m} \; ]
+\end{align*} %]]></script>
+
+<p>with the terms appearing inside the brackets being optional (controlled case).</p>
+
+<p>Assumptions:</p>
+<ul>
+  <li>Distance from target to chaser is much much smaller than the orbital radius, i.e., $\vert \boldsymbol{\rho}(t) \vert &lt; &lt; \vert \mathbf{r}_{tgt} \vert \Rightarrow \boldsymbol{r} _{ch} \approx \mathbf{r} _{tgt}  $</li>
+  <li>A first order approximation on the term $\left( 1 + \frac{2x}{r_{tgt}} \right)^{-3/2} \approx 1 - \frac{3x}{r_{tgt}}$</li>
+  <li>Reduce to time invariant by assuming target orbit’s eccentricity equal to zero.</li>
+</ul>
+
+<h2 id="discrete-system-equations">Discrete System Equations</h2>
+
+<p>The discrete, analytical solution to the system can be expressed as a traditional LTI system of the form $ \mathbf{x}_{k+1} = \mathbf{A}_d \mathbf{x}_k + \mathbf{B}_d \mathbf{u}_k $</p>
+
+<ol class="bibliography"><li><span id="grisetti2010tutorial">Grisetti, G., Kummerle, R., Stachniss, C., &amp; Burgard, W. (2010). A tutorial on graph-based SLAM. <i>IEEE Intelligent Transportation Systems Magazine</i>, <i>2</i>(4), 31–43.</span></li>
+<li><span id="koller2009probabilistic">Koller, D., &amp; Friedman, N. (2009). <i>Probabilistic graphical models: principles and techniques</i>. MIT press.</span></li>
+<li><span id="thrun2005probabilistic">Thrun, S., Burgard, W., &amp; Fox, D. (2005). <i>Probabilistic robotics</i>. MIT press.</span></li>
+<li><span id="Holley2018">Holley, P. (2018). What autonomous vehicle companies are doing in the wake of Sunday’s fatal Uber crash. <i>The Washington Post</i>. Retrieved from https://www.washingtonpost.com/news/innovations/wp/2018/03/23/what-autonomous-vehicle-companies-are-doing-in-the-wake-of-sundays-fatal-uber-crash/?noredirect=on&amp;utm_term=.4ffd398b0d40</span></li>
+<li><span id="Silva">De Silva, V., Roche, J., &amp; Kondoz, A. (2017). Fusion of LiDAR and Camera Sensor Data for Environment Sensing in Driverless Vehicles. <i>Eprint ArXiv:1710.06230</i>. Retrieved from https://arxiv.org/pdf/1710.06230.pdf http://arxiv.org/abs/1710.06230</span></li>
+<li><span id="Quain2017">Quain, J. (2017). What Self-Driving Cars See. <i>The New York Times</i>. Retrieved from https://www.nytimes.com/2017/05/25/automobiles/wheels/lidar-self-driving-cars.html</span></li>
+<li><span id="Canziani2016">Canziani, A., Paszke, A., &amp; Culurciello, E. (2016, May). <i>An Analysis of Deep Neural Network Models for Practical Applications</i>. Retrieved from http://arxiv.org/abs/1605.07678</span></li>
+<li><span id="DeWeck2006">De Weck, O. L., &amp; Jones, M. B. (2006). Isoperformance: Analysis and design of complex systems with desired outcomes. <i>Systems Engineering</i>, <i>9</i>(1), 45–61. https://doi.org/10.1002/sys.20043</span></li>
+<li><span id="Kschischang2013">Kschischang, F. R. (2001). Factor Graphs and the Sum-Product Algorithm. In <i>IEEE Transactions on Information Theory</i> (Vol. 47, pp. 498–519). https://doi.org/0018-9448/01</span></li>
+<li><span id="Meng2017">Meng, H., &amp; Zhang, W.-B. (2017). Sensing architecture for automated/autonomous vehicles towards all-condition safety. In <i>2017 IEEE Intelligent Vehicles Symposium (IV)</i> (pp. 317–321). IEEE. https://doi.org/10.1109/IVS.2017.7995738</span></li>
+<li><span id="Tzoumas2017">Tzoumas, V., Carlone, L., Pappas, G. J., &amp; Jadbabaie, A. (2017, September). <i>Sensing-Constrained LQG Control</i>. https://doi.org/https://doi.org/10.1109/CDC.2009.5400528</span></li>
+<li><span id="Kehtarnavaz1991">Kehtarnavaz, N., Griswold, N. C., &amp; Eem, J. K. (1991). Comparison of mono- and stereo-camera systems for autonomous vehicle tracking. In M. M. Trivedi (Ed.), <i>Proceedings of SPIE</i> (pp. 467–478). https://doi.org/10.1117/12.45489</span></li>
+<li><span id="Gehrig2013">Gehrig, S., Reznitskii, M., Schneider, N., Franke, U., &amp; Weickert, J. (2013). Priors for stereo vision under adverse weather conditions. In <i>Proceedings of the IEEE International Conference on Computer Vision</i> (pp. 238–245). https://doi.org/10.1109/ICCVW.2013.39</span></li>
+<li><span id="Montgomery2006">Ryde, J., &amp; Hillier, N. (2009). Performance of laser and radar ranging devices in adverse environmental conditions. <i>Journal of Field Robotics</i>, <i>26</i>(9), 712–727. https://doi.org/10.1002/rob.20310</span></li>
+<li><span id="RyanW2014">Ryan W., W., &amp; Ryan M., E. (2014). Visual Localization Within LIDAR Maps. In <i>2014 IEEE/RSJ International Conference on Intelligent Robots and Systems</i> (p. 8).</span></li>
+<li><span id="Ma2012">Ma, J., Susca, S., Bajracharya, M., Matthies, L., Malchano, M., &amp; Wooden, D. (2012). Robust multi-sensor, day/night 6-DOF pose estimation for a dynamic legged vehicle in GPS-denied environments. In <i>2012 IEEE International Conference on Robotics and Automation</i> (pp. 619–626). IEEE. https://doi.org/10.1109/ICRA.2012.6225132</span></li>
+<li><span id="Durrant-Whyte2006">Durrant-Whyte, H., &amp; Bailey, T. (2006). Simultaneous localization and mapping: part I. <i>IEEE Robotics &amp; Automation Magazine</i>, <i>13</i>(2), 99–110. https://doi.org/10.1109/MRA.2006.1638022</span></li>
+<li><span id="ho2006loop">Ho, K. L., &amp; Newman, P. (2006). Loop closure detection in SLAM by combining visual and spatial appearance. <i>Robotics and Autonomous Systems</i>, <i>54</i>(9), 740–749.</span></li>
+<li><span id="Dellaert2012">Dellaert, F. (2012). <i>Factor Graphs and GTSAM : A Hands-on Introduction</i> (No. September) (pp. 1–27). Atlanta: GeorgiaTech.</span></li></ol>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">tonio&#39;s world</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">tonio&#39;s world</li><li><a class="u-email" href="mailto:teran@mit.edu">teran@mit.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/tonioteran"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">tonioteran</span></a></li><li><a href="https://www.twitter.com/idonthavetwitter"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">idonthavetwitter</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This website is a compendium of tips, tricks, hacks, code, images,  and all sorts of things that I have deemed useful through the years. It serves as a place for me to keep adding new content, and for  everyone interested to easily access all of it.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Tips and Tricks | tonio’s world</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Tips and Tricks" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This website is a compendium of tips, tricks, hacks, code, images, and all sorts of things that I have deemed useful through the years. It serves as a place for me to keep adding new content, and for everyone interested to easily access all of it." />
+<meta property="og:description" content="This website is a compendium of tips, tricks, hacks, code, images, and all sorts of things that I have deemed useful through the years. It serves as a place for me to keep adding new content, and for everyone interested to easily access all of it." />
+<link rel="canonical" href="http://localhost:4000/tipstricks/tipstricks.html" />
+<meta property="og:url" content="http://localhost:4000/tipstricks/tipstricks.html" />
+<meta property="og:site_name" content="tonio’s world" />
+<script type="application/ld+json">
+{"description":"This website is a compendium of tips, tricks, hacks, code, images, and all sorts of things that I have deemed useful through the years. It serves as a place for me to keep adding new content, and for everyone interested to easily access all of it.","@type":"WebPage","url":"http://localhost:4000/tipstricks/tipstricks.html","headline":"Tips and Tricks","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="tonio's world" /><script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+	tex2jax: {
+	    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	    processEscapes: true
+		}
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">tonio&#39;s world</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/tipstricks/tipstricks.html">Tips and Tricks</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Tips and Tricks</h1>
+  </header>
+
+  <div class="post-content">
+    <p>The intention of this space is to create an easily accessible compendium of useful tips and tricks that I’ve found throughout the ages while surfing the wonders of the WWW.</p>
+
+<h2 id="command-line-tools">Command Line Tools</h2>
+
+<h3 id="removing-lines-from-text-files">Removing Lines From Text Files</h3>
+<p>Credit: <a href="https://stackoverflow.com/questions/5410757/delete-lines-in-a-text-file-that-contain-a-specific-string">SiegeX</a></p>
+
+<p>For deleting text lines containing a particular string, I use <code class="highlighter-rouge">sed</code>, e.g.:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sed <span class="nt">-i</span> <span class="s1">'/pattern/d'</span> ./nameOfFile
+</code></pre></div></div>
+
+<h3 id="reformatting-images">Reformatting Images</h3>
+
+<h3 id="resizing-images">Resizing Images</h3>
+<p>Credit: <a href="https://askubuntu.com/questions/271776/how-to-resize-an-image-through-the-terminal">Rinzwind</a></p>
+
+<p>To quickly resize an image using <code class="highlighter-rouge">convert</code>, it’s as simple as:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert figure.png <span class="nt">-resize</span> 128x128 resizedFigure.png
+</code></pre></div></div>
+
+<h3 id="convert-image-set-into-video">Convert Image Set Into Video</h3>
+<p>Credit: <a href="http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/">Hammad Mazhar</a></p>
+
+<p>The previous list contains a pretty comprehensive list for accomplishing this by using <code class="highlighter-rouge">ffmpeg</code>.</p>
+
+<p>My favorite usage goes something like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-framerate</span> 6 <span class="nt">-pattern_type</span> glob <span class="nt">-i</span> <span class="s1">'LeftRightUnrectified*.bmp'</span> <span class="nt">-vb</span> 20M <span class="nt">-vcodec</span> mpeg4 out.mp4
+</code></pre></div></div>
+
+<h3 id="convert-image-set-into-gif">Convert Image Set Into GIF</h3>
+
+<p>I’ve tried multiple tools, such as <code class="highlighter-rouge">ffmpeg</code>, <code class="highlighter-rouge">convert</code>, etc, and the way in which I find it the easiest to customize the delay is using <code class="highlighter-rouge">gm</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gm convert <span class="nt">-delay</span> 10 <span class="nt">-loop</span> 0 OpticsMount_0_Images/LeftRightUnrectified<span class="k">*</span>.bmp out.gif
+</code></pre></div></div>
+
+<p>For further optimization, I use <code class="highlighter-rouge">convert</code> with a varying level of fuzz in the following way:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert LeftRightUnrectifiedGif.gif <span class="nt">-fuzz</span> 5% <span class="nt">-layers</span> Optimize result.gif
+</code></pre></div></div>
+
+<h3 id="convert-video-into-gif">Convert Video Into GIF</h3>
+<p>Credit: <a href="https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality">LordNeckbeard</a></p>
+
+<p>Created a wrapper for using <code class="highlighter-rouge">ffmpeg</code> to create frames from a video, and then using <code class="highlighter-rouge">convert</code> to transform them into a GIF. The script is <code class="highlighter-rouge">vid2gif.sh</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./vid2gif.sh TS99_15_T7-BothStatGM_OVHD.ts 480 0.5 0.2 5%
+</code></pre></div></div>
+
+<h3 id="pdf-compression-macos--linux">PDF Compression (macOS &amp; Linux)</h3>
+<p>Credit: <a href="https://blog.omgmog.net/post/compressing-pdf-from-your-mac-or-linux-terminal-with-ghostscript/">Max Glenister</a></p>
+
+<p>Using <code class="highlighter-rouge">ghostscript</code>, one can compress PDF files through the use of the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gs <span class="nt">-sDEVICE</span><span class="o">=</span>pdfwrite <span class="nt">-dNOPAUSE</span> <span class="nt">-dQUIET</span> <span class="nt">-dBATCH</span> <span class="nt">-dPDFSETTINGS</span><span class="o">=</span>/screen <span class="nt">-dCompatibilityLevel</span><span class="o">=</span>1.4 <span class="nt">-sOutputFile</span><span class="o">=</span>output.pdf input.pdf
+</code></pre></div></div>
+
+<h3 id="managing-installed-libraries">Managing installed libraries</h3>
+<p>Credit: <a href="https://stackoverflow.com/questions/8804064/find-opencv-version-installed-on-ubuntu">crenate</a></p>
+
+<p>Using pkg-config to procure information on installed libraries, e.g., finding out one’s OpenCV version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pkg-config <span class="nt">--modversion</span> opencv
+</code></pre></div></div>
+
+<h3 id="connecting-to-vpn-using-command-line">Connecting to VPN using Command Line</h3>
+<p>Credit: <a href="https://superuser.com/questions/649614/connect-using-anyconnect-from-command-line">A-B-B</a></p>
+
+<p>When using Ubuntu 18, there seems to be an error while launching the Cisco Anyconnect application, so I opted to connect to the host using the command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/cisco/anyconnect/bin/vpn <span class="nt">-s</span> connect HOST
+</code></pre></div></div>
+
+<p>One will then get prompted for username, password, and second password if duo authentication is required.</p>
+
+<h2 id="git-tools">Git Tools</h2>
+
+<h3 id="update-branches">Update branches</h3>
+<p>Credit: <a href="https://stackoverflow.com/questions/20106712/what-are-the-differences-between-git-remote-prune-git-prune-git-fetch-prune">John Szakmeister</a></p>
+
+<p>Allows one ot update one’s local list of remote branches, which I always tend to forget how to do:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote update origin <span class="nt">--prune</span>
+</code></pre></div></div>
+
+<h2 id="ipython">IPython</h2>
+
+<h3 id="apply-changes-after-edits">Apply changes after edits</h3>
+<p>Credit: <a href="https://stackoverflow.com/questions/1254370/reimport-a-module-in-python-while-interactive">Andrew</a></p>
+
+<p>I was always very annoyed whenever changes to my files wouldn’t be recognized during an ipython session (so much time spent debugging thinking there was an error in my code, when the only issue was that the changes weren’t being taken into account). Using the <a href="https://ipython.readthedocs.io/en/stable/config/extensions/autoreload.html">autoreload</a> extension, one is able to have the modules automatically reloaded before executing user code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">load_ext</span> <span class="n">autoreload</span>
+<span class="o">%</span><span class="n">autoreload</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<h2 id="gnuplot">Gnuplot</h2>
+
+<h3 id="reading-parameters-from-external-file">Reading parameters from external file</h3>
+<p>Credit: <a href="https://stackoverflow.com/questions/11211339/gnuplot-store-one-number-from-data-file-into-variable">stackoverflow</a></p>
+
+<p>TODO: … Explain and post example.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">tonio&#39;s world</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">tonio&#39;s world</li><li><a class="u-email" href="mailto:teran@mit.edu">teran@mit.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/tonioteran"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">tonioteran</span></a></li><li><a href="https://www.twitter.com/idonthavetwitter"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">idonthavetwitter</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This website is a compendium of tips, tricks, hacks, code, images,  and all sorts of things that I have deemed useful through the years. It serves as a place for me to keep adding new content, and for  everyone interested to easily access all of it.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
