@@ -49,3 +49,7 @@ collections:
   concepts:
     output: true
     permalink: /:collection/:path
+
+# jekyll-scholar config
+scholar:
+  style: ieee

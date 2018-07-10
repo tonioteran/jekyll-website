@@ -16,7 +16,7 @@ $$
 \end{align*}
 $$
 
-with the terms appearing inside the brackets being optional (controlled case).
+with the terms appearing inside the brackets being optional (controlled case) {% cite lovell2014relative %}.
 
 
 Assumptions:
@@ -26,8 +26,40 @@ Assumptions:
 
 ## Discrete System Equations
 
-The discrete, analytical solution to the system can be expressed as a traditional LTI system of the form $ \mathbf{x}_{k+1} = \mathbf{A}_d \mathbf{x}_k + \mathbf{B}_d \mathbf{u}_k $
+The discrete, analytical solution to the system can be expressed as a traditional LTI system of the form $ \mathbf{x}_{k+1} = \mathbf{A}_d \mathbf{x}_k + \mathbf{B}_d \mathbf{u}_k$ {% cite jewison2018probabilistic %}, where the system matrix is of the form 
 
 
-{% bibliography --file concepts %}
+$$ 
+\begin{align*} \mathbf{A}_d = \begin{bmatrix} 
+4-3\cos(nT) & 0 & 0 & \frac{1}{n}\sin(nT) & \frac{2}{n}(1-\cos(nT)) & 0 \\\\[0.3em] 
+6(\sin(nT)-nT) & 1 & 0 & -\frac{2}{n}(1-\cos(nT)) & \frac{1}{n}(4\sin(nT)-3nT) & 0 \\\\[0.3em]
+0 & 0 & \cos(nT) & 0 & 0 & \frac{1}{n}\sin(nT) \\\\[0.3em] 
+3n\sin(nT) & 0 & 0 & \cos(nT) & 2\sin(nT) & 0 \\\\[0.3em] 
+-6n(1-\cos(nT)) & 0 & 0 & -2\sin(nT) & 4\cos(nT)-3 & 0 \\\\[0.3em] 
+0 & 0 & -n\sin(nT) & 0 & 0 & \cos(nT) \\\\[0.3em]
+\end{bmatrix}, 
+\end{align*} 
+$$
+
+and the control input matrix is expressed as
+
+$$
+\begin{align*}
+\mathbf{B}_d = \begin{bmatrix}
+\frac{1}{n}\sin(nT) & \frac{2}{n}(1-\cos(nT)) & 0 \\\\[0.3em]
+-\frac{2}{n^2}(nT - \sin(nT)) & \frac{4}{n^2}(1-\cos(nT))-\frac{3}{2} T^2 & 0 \\\\[0.3em]
+0 & 0 & \frac{1}{n^2}(1-\cos(nT)) \\\\[0.3em]
+\frac{1}{n}\sin(nT) & \frac{2}{n}(1-\cos(nT)) & 0 \\\\[0.3em]
+-\frac{2}{n}(1-cos(nT)) & \frac{4}{n}\sin(nT) - 3T & 0 \\\\[0.3em]
+0 & 0 & \frac{1}{n}\sin(nT) \\\\[0.3em]
+\end{bmatrix}.
+\end{align*}
+$$
+
+
+
+## Bibliography
+
+{% bibliography cited_in_order %}
+
 
