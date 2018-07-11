@@ -60,6 +60,6 @@ $$
 
 ## Bibliography
 
-{% bibliography cited_in_order %}
+{% bibliography --cited_in_order %}
 
 
