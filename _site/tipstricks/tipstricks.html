@@ -158,6 +158,20 @@
 
 <p>TODO: … Explain and post example.</p>
 
+<h2 id="c-tricks">C++ Tricks</h2>
+
+<h3 id="creating-directory-during-runtime">Creating directory during runtime</h3>
+
+<p>This <a href="https://codeyarns.com/2014/08/07/how-to-create-directory-using-c-on-linux/">page</a> is an excellent references, with its example reproduced here:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;sys/stat.h&gt;
+</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">dir_err</span> <span class="o">=</span> <span class="n">mkdir</span><span class="p">(</span><span class="s">"foo"</span><span class="p">,</span> <span class="n">S_IRWXU</span> <span class="o">|</span> <span class="n">S_IRWXG</span> <span class="o">|</span> <span class="n">S_IROTH</span> <span class="o">|</span> <span class="n">S_IXOTH</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="n">dir_err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Error creating directory!n"</span><span class="p">);</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
   </div>
 

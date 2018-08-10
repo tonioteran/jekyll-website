@@ -128,4 +128,18 @@ Credit: [stackoverflow](https://stackoverflow.com/questions/11211339/gnuplot-sto
 TODO: ... Explain and post example.
 
 
+## C++ Tricks
 
+### Creating directory during runtime
+
+This [page](https://codeyarns.com/2014/08/07/how-to-create-directory-using-c-on-linux/) is an excellent references, with its example reproduced here:
+
+```cpp
+#include <sys/stat.h>
+
+const int dir_err = mkdir("foo", S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+if (-1 == dir_err) {
+    printf("Error creating directory!n");
+    exit(1);
+}
+```
