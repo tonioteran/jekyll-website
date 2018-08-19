@@ -7,6 +7,17 @@ The intention of this space is to create an easily accessible compendium of usef
 
 ## Command Line Tools
 
+
+### adding characters to text files
+Credit: [Tim Zimmermann](https://stackoverflow.com/questions/26476420/make-one-space-after-every-comma)
+
+Specially when I deal with csv files, some tools (e.g., gnuplot) sometimes have trouble parsing or reading the file. One can quickly solve this issue by adding a whitespace after every comma character using `sed`, e.g.:
+
+```bash
+sed -i 's/,/, /g; s/,\s\+/, /g' file
+```
+
+
 ### Removing Lines From Text Files
 Credit: [SiegeX](https://stackoverflow.com/questions/5410757/delete-lines-in-a-text-file-that-contain-a-specific-string)
 
