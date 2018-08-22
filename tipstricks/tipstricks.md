@@ -154,3 +154,10 @@ if (-1 == dir_err) {
     exit(1);
 }
 ```
+
+### creating threads within classes
+
+Credit: [Adam Rosenfield](https://stackoverflow.com/users/9530/adam-rosenfield)
+
+This [stackoverflow post](https://stackoverflow.com/questions/1151582/pthread-function-from-a-class) has some pretty nifty advices:
+
