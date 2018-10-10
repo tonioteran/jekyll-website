@@ -1,0 +1,21 @@
+#/bin/bash
+
+# Script to compile a tex file using bibtex bibliography
+# Arguments:
+# 1 = path to the .tex file
+
+# Change to that directory
+FILENAME=$(basename ${1} .tex)
+FILEPATHNAME=$(dirname ${1})
+cd $FILEPATHNAME
+
+# Initial compilation to produce pdf and aux files
+pdflatex $1
+
+# Incorporate bibtex information
+bibtex "${FILENAME}.aux" 
+
+# Recompile twice to produce correct pdf
+pdflatex $1
+pdflatex $1
+

@@ -12,7 +12,7 @@ As outlined in {% cite kaess2008isam }, a standard approach to incrementally obt
 
 $$
 \begin{equation}
-\boldsymbol{\Phi} = \begin{bmatrix} \cos{\phi} & \sin{\phi} \\ -\sin{\phi} & \cos{\phi} \end{bmatrix},
+\boldsymbol{\Phi} 
 \end{equation}
 $$
 
