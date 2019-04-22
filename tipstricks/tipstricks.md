@@ -3,7 +3,9 @@ layout: page
 title: Tips and Tricks
 ---
 
-The intention of this space is to create an easily accessible compendium of useful tips and tricks that I've found throughout the ages while surfing the wonders of the WWW. 
+The intention of this space is to create an easily accessible compendium of
+useful tips and tricks that I've found throughout the ages while surfing the
+wonders of the WWW.
 
 ## Command Line Tools
 
@@ -11,7 +13,9 @@ The intention of this space is to create an easily accessible compendium of usef
 ### adding characters to text files
 Credit: [Tim Zimmermann](https://stackoverflow.com/questions/26476420/make-one-space-after-every-comma)
 
-Specially when I deal with csv files, some tools (e.g., gnuplot) sometimes have trouble parsing or reading the file. One can quickly solve this issue by adding a whitespace after every comma character using `sed`, e.g.:
+Specially when I deal with csv files, some tools (e.g., gnuplot) sometimes have
+trouble parsing or reading the file. One can quickly solve this issue by adding
+a whitespace after every comma character using `sed`, e.g.:
 
 ```bash
 sed -i 's/,/, /g; s/,\s\+/, /g' file
@@ -43,7 +47,8 @@ convert figure.png -resize 128x128 resizedFigure.png
 ### Convert Image Set Into Video
 Credit: [Hammad Mazhar](http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/)
 
-The previous list contains a pretty comprehensive list for accomplishing this by using `ffmpeg`.
+The previous list contains a pretty comprehensive list for accomplishing this by
+using `ffmpeg`.
 
 My favorite usage goes something like this:
 
@@ -53,13 +58,15 @@ ffmpeg -framerate 6 -pattern_type glob -i 'LeftRightUnrectified*.bmp' -vb 20M -v
 
 ### Convert Image Set Into GIF
 
-I've tried multiple tools, such as `ffmpeg`, `convert`, etc, and the way in which I find it the easiest to customize the delay is using `gm`:
+I've tried multiple tools, such as `ffmpeg`, `convert`, etc, and the way in
+which I find it the easiest to customize the delay is using `gm`:
 
 ```bash
 gm convert -delay 10 -loop 0 OpticsMount_0_Images/LeftRightUnrectified*.bmp out.gif
 ```
 
-For further optimization, I use `convert` with a varying level of fuzz in the following way:
+For further optimization, I use `convert` with a varying level of fuzz in the
+following way:
 
 ```bash
 convert LeftRightUnrectifiedGif.gif -fuzz 5% -layers Optimize result.gif
@@ -68,11 +75,20 @@ convert LeftRightUnrectifiedGif.gif -fuzz 5% -layers Optimize result.gif
 ### Convert Video Into GIF
 Credit: [LordNeckbeard](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality)
 
-Created a wrapper for using `ffmpeg` to create frames from a video, and then using `convert` to transform them into a GIF. The script is `vid2gif.sh`.
+Created a wrapper for using `ffmpeg` to create frames from a video, and then
+using `convert` to transform them into a GIF. The script is `vid2gif.sh`.
 
 ```bash
 ./vid2gif.sh TS99_15_T7-BothStatGM_OVHD.ts 480 0.5 0.2 5%
 ```
+
+The following parameters are used:
+
+- 1: path to video file
+- 2: height of gif
+- 3: fps
+- 4: delay between frames
+- 5: amount of fuzz
 
 
 ### PDF Compression (macOS & Linux)

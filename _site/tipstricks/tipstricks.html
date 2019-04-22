@@ -52,14 +52,18 @@
   </header>
 
   <div class="post-content">
-    <p>The intention of this space is to create an easily accessible compendium of useful tips and tricks that I’ve found throughout the ages while surfing the wonders of the WWW.</p>
+    <p>The intention of this space is to create an easily accessible compendium of
+useful tips and tricks that I’ve found throughout the ages while surfing the
+wonders of the WWW.</p>
 
 <h2 id="command-line-tools">Command Line Tools</h2>
 
 <h3 id="adding-characters-to-text-files">adding characters to text files</h3>
 <p>Credit: <a href="https://stackoverflow.com/questions/26476420/make-one-space-after-every-comma">Tim Zimmermann</a></p>
 
-<p>Specially when I deal with csv files, some tools (e.g., gnuplot) sometimes have trouble parsing or reading the file. One can quickly solve this issue by adding a whitespace after every comma character using <code class="highlighter-rouge">sed</code>, e.g.:</p>
+<p>Specially when I deal with csv files, some tools (e.g., gnuplot) sometimes have
+trouble parsing or reading the file. One can quickly solve this issue by adding
+a whitespace after every comma character using <code class="highlighter-rouge">sed</code>, e.g.:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sed <span class="nt">-i</span> <span class="s1">'s/,/, /g; s/,\s\+/, /g'</span> file
 </code></pre></div></div>
@@ -85,7 +89,8 @@
 <h3 id="convert-image-set-into-video">Convert Image Set Into Video</h3>
 <p>Credit: <a href="http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/">Hammad Mazhar</a></p>
 
-<p>The previous list contains a pretty comprehensive list for accomplishing this by using <code class="highlighter-rouge">ffmpeg</code>.</p>
+<p>The previous list contains a pretty comprehensive list for accomplishing this by
+using <code class="highlighter-rouge">ffmpeg</code>.</p>
 
 <p>My favorite usage goes something like this:</p>
 
@@ -94,12 +99,14 @@
 
 <h3 id="convert-image-set-into-gif">Convert Image Set Into GIF</h3>
 
-<p>I’ve tried multiple tools, such as <code class="highlighter-rouge">ffmpeg</code>, <code class="highlighter-rouge">convert</code>, etc, and the way in which I find it the easiest to customize the delay is using <code class="highlighter-rouge">gm</code>:</p>
+<p>I’ve tried multiple tools, such as <code class="highlighter-rouge">ffmpeg</code>, <code class="highlighter-rouge">convert</code>, etc, and the way in
+which I find it the easiest to customize the delay is using <code class="highlighter-rouge">gm</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gm convert <span class="nt">-delay</span> 10 <span class="nt">-loop</span> 0 OpticsMount_0_Images/LeftRightUnrectified<span class="k">*</span>.bmp out.gif
 </code></pre></div></div>
 
-<p>For further optimization, I use <code class="highlighter-rouge">convert</code> with a varying level of fuzz in the following way:</p>
+<p>For further optimization, I use <code class="highlighter-rouge">convert</code> with a varying level of fuzz in the
+following way:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert LeftRightUnrectifiedGif.gif <span class="nt">-fuzz</span> 5% <span class="nt">-layers</span> Optimize result.gif
 </code></pre></div></div>
@@ -107,10 +114,21 @@
 <h3 id="convert-video-into-gif">Convert Video Into GIF</h3>
 <p>Credit: <a href="https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality">LordNeckbeard</a></p>
 
-<p>Created a wrapper for using <code class="highlighter-rouge">ffmpeg</code> to create frames from a video, and then using <code class="highlighter-rouge">convert</code> to transform them into a GIF. The script is <code class="highlighter-rouge">vid2gif.sh</code>.</p>
+<p>Created a wrapper for using <code class="highlighter-rouge">ffmpeg</code> to create frames from a video, and then
+using <code class="highlighter-rouge">convert</code> to transform them into a GIF. The script is <code class="highlighter-rouge">vid2gif.sh</code>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./vid2gif.sh TS99_15_T7-BothStatGM_OVHD.ts 480 0.5 0.2 5%
 </code></pre></div></div>
+
+<p>The following parameters are used:</p>
+
+<ul>
+  <li>1: path to video file</li>
+  <li>2: height of gif</li>
+  <li>3: fps</li>
+  <li>4: delay between frames</li>
+  <li>5: amount of fuzz</li>
+</ul>
 
 <h3 id="pdf-compression-macos--linux">PDF Compression (macOS &amp; Linux)</h3>
 <p>Credit: <a href="https://blog.omgmog.net/post/compressing-pdf-from-your-mac-or-linux-terminal-with-ghostscript/">Max Glenister</a></p>
